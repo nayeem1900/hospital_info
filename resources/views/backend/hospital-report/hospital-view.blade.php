@@ -63,7 +63,7 @@
                             <div class="card-body">
                                 <div id="DocumentResults"></div>
 
-                                <table class="table table-bordered table-striped dt-responsive" style="width: 100%">
+                                <table class="table table-bordered table-striped dt-responsive datatable_example" style="width: 100%">
                                     <thead id="report-thead"> </thead>
                                     <tbody id="report-tbody"></tbody>
 
@@ -83,6 +83,25 @@
         <!-- /.content -->
 
         <script type="text/javascript">
+
+
+            $(document).ready( function () {
+                var table = $('.datatable_example').dataTable();
+                var tableTools = new $.fn.dataTable.TableTools( table, {
+                    "buttons": [
+                        "copy",
+                        "csv",
+                        "xls",
+                        "pdf",
+                        { "type": "print", "buttonText": "Print me!" }
+                    ]
+                } );
+
+                $( tableTools.fnContainer() ).insertAfter('div.info');
+            } );
+
+
+
             $(document).on('click','#search',function () {
 
                 var start_date=$('#start_date').val();
@@ -208,6 +227,11 @@
                     $.notify("End Date required",{globalPosition:'top right',className:'error'});
                     return false;
                 }
+
+                console.log("{{route('reports.h-report.pdf')}} ?start_date="+start_date+"&end_date="+end_date );
+
+                {{--return window.location.href ="{{route('reports.h-report.pdf')}}?start_date="+start_date+"&end_date="+end_date+"download";--}}
+                return window.open("{{route('reports.h-report.pdf')}}?start_date="+start_date+"&end_date="+end_date, "download");
 
 
                 $.ajax({

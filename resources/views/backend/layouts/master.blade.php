@@ -10,6 +10,7 @@
 
 
 {{--Bootstrap--}}
+    <link href="https://cdn.datatables.net/v/bs4/dt-2.0.0/datatables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
@@ -194,6 +195,7 @@ $(function(){
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>--}}
 
 <!-- jQuery UI 1.11.4 -->
+<script src="https://cdn.datatables.net/v/bs4/dt-2.0.0/datatables.min.js"></script>
 <script src="{{asset('backend/admin_panel/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>

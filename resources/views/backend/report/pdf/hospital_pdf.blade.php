@@ -120,7 +120,7 @@
                     <td>{{$key+1}}</td>
                 </tr>
                 <tr>
-                    <td> Employee Salary</td>
+                    <td> Cabin no</td>
                     <td>{{$value->cabin_no}}</td>
                 </tr>
                 @endforeach

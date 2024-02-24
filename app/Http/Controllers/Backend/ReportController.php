@@ -59,7 +59,7 @@ class ReportController extends Controller
 
         $pdf =Pdf::loadView('backend.report.pdf.hospital_pdf',$data);
 
-      return $pdf->stream('document.pdf');
+      return $pdf->download('document.pdf');
       /*$path = public_path('backend.pdf');
         $pdf->save($path);*/
     }
