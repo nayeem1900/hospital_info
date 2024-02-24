@@ -58,98 +58,8 @@ $route=Route::current()->getName();
 
             </ul>
         </li>
-        @isset(auth()->user()->role->permission['permission']['logo']['view'])
-        <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    Manage Logo
-                    <i class="fas fa-angle-left right"></i>
 
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('logos.view')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View Logo</p>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
-        @endisset
-        @isset(auth()->user()->role->permission['permission']['slider']['view'])
-
-        <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    Manage Slider
-                    <i class="fas fa-angle-left right"></i>
-
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('sliders.view')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View Slider</p>
-                    </a>
-                </li>
-
-
-
-            </ul>
-        </li>
-
-        @endisset
-        @isset(auth()->user()->role->permission['permission']['etender']['view'])
-        <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    Manage Etender
-                    <i class="fas fa-angle-left right"></i>
-
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('etenders.view')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View Etender</p>
-                    </a>
-                </li>
-
-
-
-            </ul>
-        </li>
-        @endisset
-
-        <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    Hospital Info
-                    <i class="fas fa-angle-left right"></i>
-
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('hospitalform.add')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Form</p>
-                    </a>
-                </li>
-
-
-
-            </ul>
-        </li>
-
+        @isset(auth()->user()->role->permission['permission']['report']['view'])
 
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -164,43 +74,12 @@ $route=Route::current()->getName();
                 <li class="nav-item">
                     <a href="{{route('reports.bh.view')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Bank Hospital</p>
+                        <p>Hospital Report</p>
                     </a>
                 </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Community Hospital</p>
-                    </a>
-                </li>
-
             </ul>
         </li>
 
-        @isset(auth()->user()->role->permission['permission']['carrier']['view'])
-        <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    Manage Carrier
-                    <i class="fas fa-angle-left right"></i>
-
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('carriers.view')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View Carrier</p>
-                    </a>
-                </li>
-
-
-
-            </ul>
-        </li>
         @endisset
 
         @isset(auth()->user()->role->permission['permission']['role']['view'])
@@ -273,33 +152,8 @@ $route=Route::current()->getName();
             </ul>
         </li>
         @endisset
-        @isset(auth()->user()->role->permission['permission']['ibchkdept']['view'])
-        <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    IBCHK Dept
-                    <i class="fas fa-angle-left right"></i>
 
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('ibchk.dept.view')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View Dept</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('ibchk.doctor.view')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View Doctor</p>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
-        @endisset
+        @isset(auth()->user()->role->permission['permission']['branch']['view'])
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
@@ -321,37 +175,30 @@ $route=Route::current()->getName();
 
             </ul>
         </li>
-
-
-
-       {{-- <li class="nav-item has-treeview">
+        @endisset
+        @isset(auth()->user()->role->permission['permission']['hospital_info']['add'])
+        <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
-                    Motijheel Hospital
+                    Hospital Info
                     <i class="fas fa-angle-left right"></i>
 
                 </p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('motijheel.dept.view')}}" class="nav-link">
+                    <a href="{{route('hospitalform.add')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>View Dept</p>
+                        <p>Form</p>
                     </a>
                 </li>
 
-               --}}{{-- <li class="nav-item">
-                    <a href="{{route('ibchk.doctor.view')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View Doctor</p>
-                    </a>
-                </li>--}}{{--
+
 
             </ul>
-        </li>--}}
-
-
+        </li>
+        @endisset
 
     </ul>
 </nav>

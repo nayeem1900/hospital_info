@@ -29,32 +29,8 @@ use App\Http\Controllers\Backend\ReportController;
 */
 
 Route::get('/',[FrontendController::class,'index'])->name('index');
-Route::get('/etender',[FrontendController::class,'etender'])->name('etender');
-Route::get('/hospital-info',[FrontendController::class,'hospitalinfo'])->name('hospital-info');
-Route::get('/career',[FrontendController::class,'career'])->name('career');
-Route::get('/jakat',[FrontendController::class,'jakat'])->name('jakat');
-Route::get('/contact',[FrontendController::class,'contact'])->name('contact');
 
-Route::get('/foundation_committee',[FrontendController::class,'foundationcommittee'])->name('foundationcommittee');
-Route::get('/at_glance',[FrontendController::class,'atglance'])->name('atglance');
-Route::get('/executive_committee',[FrontendController::class,'executivecommittee'])->name('executivecommittee');
-Route::get('/health_education_committee',[FrontendController::class,'healtheducationcommittee'])->name('healtheducationcommittee');
-Route::get('/audit_committee',[FrontendController::class,'auditcommittee'])->name('auditcommittee');
-Route::get('/hospital_committee',[FrontendController::class,'hospitalcommittee'])->name('hospitalcommittee');
-Route::get('/community_hospital_board',[FrontendController::class,'communityhospitalboard'])->name('communityhospitalboard');
-Route::get('/education_committee',[FrontendController::class,'educationcommittee'])->name('educationcommittee');
-Route::get('/community_hospital_committee',[FrontendController::class,'communityhospitalcommittee'])->name('communityhospitalcommittee');
-/*Route::get('ibchkdoctor/ajax/{ibchd_id}',[FrontendController::class,'getIbchDoctor'])->name('ajax-doctor');*/
-//Bank_Hospital
-Route::get('ibch',[FrontendController::class,'ibch'])->name('ibch');
-Route::get('ibch-doctor',[FrontendController::class,'ibchDoctor'])->name('ibch.ent-doctor');
-Route::get('ibch-cardiology',[FrontendController::class,'ibchCard'])->name('ibch.card-doctor');
-Route::get('ibch-gyno',[FrontendController::class,'ibchGyno'])->name('ibch.gyno-doctor');
-Route::get('ibch-uro',[FrontendController::class,'ibchUro'])->name('ibch.uro-doctor');
-Route::get('ibchchild',[FrontendController::class,'childIbch'])->name('ibch.child-doctor');
-Route::get('ibchdep',[FrontendController::class,'ibchDep'])->name('ibch.dep');
-//Bank_Hospital Motijheel
-Route::get('motijheel-hospital',[FrontendController::class,'motijheel'])->name('motijheel');
+
 
 
 /*Route::get('/', function () {
@@ -144,56 +120,13 @@ Route::group(['prefix'=>'branches','middleware'=>['admin','auth','permission']],
 
 });
 
-//Carrier
-Route::group(['prefix'=>'carriers','middleware'=>['admin','auth','permission']],function () {
 
-    Route::get('/view',[CarrierController::class,'view'])->name('carriers.view');
-    Route::get('/add',[CarrierController::class,'add'])->name('carriers.add');
-    Route::post('/store',[CarrierController::class,'store'])->name('carriers.store');
-    Route::get('/edit/{id},',[CarrierController::class,'edit'])->name('carriers.edit');
-    Route::post('/update/{id},',[CarrierController::class,'update'])->name('carriers.update');
-    Route::post('/delete/{id},',[CarrierController::class,'delete'])->name('carriers.delete');
-    Route::post('/download',[CarrierController::class,'download'])->name('carriers.download');
-
-
-
-});
-
-// IBCHK
-Route::group(['prefix'=>'ibchkdep','middleware'=>['admin','auth','permission']],function () {
-
-    Route::get('/view',[IbchkConrtoller::class,'view'])->name('ibchk.dept.view');
-    Route::get('/add',[IbchkConrtoller::class,'add'])->name('ibchk.dept.add');
-    Route::post('/store',[IbchkConrtoller::class,'store'])->name('ibchk.dept.store');
-    Route::get('/edit/{id}',[IbchkConrtoller::class,'edit'])->name('ibchk.dept.edit');
-    Route::post('/update/{id}',[IbchkConrtoller::class,'update'])->name('ibchk.dept.update');
-    Route::post('/delete/{id}',[IbchkConrtoller::class,'delete'])->name('ibchk.dept.delete');
-
-    Route::get('/ibchkdoctor/view',[IbchkConrtoller::class,'ibchkdoctorview'])->name('ibchk.doctor.view');
-    Route::get('/ibchkdoctor/add',[IbchkConrtoller::class,'ibchkdoctoradd'])->name('ibchk.doctor.add');
-    Route::post('/ibchkdoctor/store',[IbchkConrtoller::class,'ibchkdoctorstore'])->name('ibchk.doctor.store');
-    Route::get('/ibchkdoctor/edit/{id}',[IbchkConrtoller::class,'ibchkdoctoredit'])->name('ibchk.doctor.edit');
-    Route::post('/ibchkdoctor/update/{id}',[IbchkConrtoller::class,'ibchkdoctorupdate'])->name('ibchk.doctor.update');
-    Route::post('/ibchkdoctor/delete/{id}',[IbchkConrtoller::class,'ibchkdoctordelete'])->name('ibchk.doctor.delete');
-    Route::get('ibchkdoctor/ajax/',[IbchkConrtoller::class,'getIbchDoctor'])->name('ajax-doctor');
-});
-
-/*<!!!!!-----Islami Bank Hospital Motijheel!!!!!!!!------>*/
-Route::group(['prefix'=>'motijheeldep','middleware'=>['admin','auth','permission']],function () {
-
-    Route::get('/view',[MotijheelController::class,'view'])->name('motijheel.dept.view');
-    Route::get('/add',[MotijheelController::class,'add'])->name('motijheel.dept.add');
-    Route::post('/store',[MotijheelController::class,'store'])->name('motijheel.dept.store');
-    Route::get('/edit/{id}',[MotijheelController::class,'edit'])->name('motijheel.dept.edit');
-    Route::post('/update/{id}',[MotijheelController::class,'update'])->name('motijheel.dept.update');
-    Route::post('/delete/{id}',[MotijheelController::class,'delete'])->name('motijheel.dept.delete');
-
-});
  //Report
 Route::group(['prefix'=>'reports','middleware' => 'auth'], function(){
 //Monthly Profit
     Route::get('/bank_hospital_report/view',[ReportController::class,'BhrView'])->name('reports.bh.view');
     Route::get('/hospital_report/get', [ReportController::class,'hReport'])->name('reports.h_report.datewise.get');
+    Route::get('/hospital_report/pdf', [ReportController::class,'hReportPdf'])->name('reports.h-report.pdf');
    // Route::get('/profit/pdf', 'Backend\Report\ProfitController@pdf')->name('reports.profit.pdf');
 
 

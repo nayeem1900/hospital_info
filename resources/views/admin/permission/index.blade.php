@@ -59,7 +59,7 @@
 
                                         <tr>
                                             <td>{{($loop->iteration)}}</td>
-                                            <td>{{($permission->role->name)}}</td>
+                                            <td>{{(@$permission->role->name)}}</td>
 
 
 

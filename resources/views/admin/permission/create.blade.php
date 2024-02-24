@@ -90,93 +90,93 @@
                                             </thead>
                                               <tbody>
                                               <tr>
-                                             <td>Sliders</td>
+                                                  <td>Hospital Info</td>
 
                                                   <td>
-                                                      <input type="checkbox" name="permission[slider][view]" value="1">
+                                                      <input type="checkbox" name="permission[hospital_info][view]" value="1">
                                                   </td>
-                                            <td>
-                                            <input type="checkbox" name="permission[slider][add]" value="1">
-                                            </td>
+                                                  <td>
+                                                      <input type="checkbox" name="permission[hospital_info][add]" value="1">
+                                                  </td>
 
                                                   <td>
-                                                      <input type="checkbox" name="permission[slider][edit]" value="1">
+                                                      <input type="checkbox" name="permission[hospital_info][edit]" value="1">
                                                   </td>
                                                   <td>
-                                                      <input type="checkbox" name="permission[slider][delete]" value="1">
+                                                      <input type="checkbox" name="permission[hospital_info][delete]" value="1">
                                                   </td>
 
                                               </tr>
                                               <tr>
-                                                  <td>Logos</td>
+                                                  <td>Role</td>
+
                                                   <td>
-                                                      <input type="checkbox" name="permission[logo][view]" value="1">
+                                                      <input type="checkbox" name="permission[role][view]" value="1">
                                                   </td>
                                                   <td>
-                                                      <input type="checkbox" name="permission[logo][add]" value="1">
+                                                      <input type="checkbox" name="permission[role][add]" value="1">
+                                                  </td>
+
+                                                  <td>
+                                                      <input type="checkbox" name="permission[role][edit]" value="1">
                                                   </td>
                                                   <td>
-                                                      <input type="checkbox" name="permission[logo][edit]" value="1">
+                                                      <input type="checkbox" name="permission[role][delete]" value="1">
+                                                  </td>
+
+                                              </tr>
+                                              <tr>
+                                                  <td>Report</td>
+
+                                                  <td>
+                                                      <input type="checkbox" name="permission[report][view]" value="1">
                                                   </td>
                                                   <td>
-                                                      <input type="checkbox" name="permission[logo][delete]" value="1">
+                                                      <input type="checkbox" name="permission[report][add]" value="1">
+                                                  </td>
+
+                                                  <td>
+                                                      <input type="checkbox" name="permission[report][edit]" value="1">
+                                                  </td>
+                                                  <td>
+                                                      <input type="checkbox" name="permission[report][delete]" value="1">
+                                                  </td>
+
+                                              </tr>
+                                              <tr>
+                                                  <td>Branch</td>
+
+                                                  <td>
+                                                      <input type="checkbox" name="permission[branch][view]" value="1">
+                                                  </td>
+                                                  <td>
+                                                      <input type="checkbox" name="permission[branch][add]" value="1">
+                                                  </td>
+
+                                                  <td>
+                                                      <input type="checkbox" name="permission[branch][edit]" value="1">
+                                                  </td>
+                                                  <td>
+                                                      <input type="checkbox" name="permission[branch][delete]" value="1">
                                                   </td>
 
                                               </tr>
 
                                               <tr>
-                                                  <td>Carriers</td>
+                                                  <td>Sub Admin</td>
 
                                                   <td>
-                                                      <input type="checkbox" name="permission[carrier][view]" value="1">
+                                                      <input type="checkbox" name="permission[subadmin][view]" value="1">
                                                   </td>
                                                   <td>
-                                                      <input type="checkbox" name="permission[carrier][add]" value="1">
-                                                  </td>
-
-                                                  <td>
-                                                      <input type="checkbox" name="permission[carrier][edit]" value="1">
-                                                  </td>
-                                                  <td>
-                                                      <input type="checkbox" name="permission[carrier][delete]" value="1">
-                                                  </td>
-
-                                              </tr>
-
-                                              <tr>
-                                                  <td>Etenders</td>
-
-                                                  <td>
-                                                      <input type="checkbox" name="permission[etender][view]" value="1">
-                                                  </td>
-                                                  <td>
-                                                      <input type="checkbox" name="permission[etender][add]" value="1">
+                                                      <input type="checkbox" name="permission[subadmin][add]" value="1">
                                                   </td>
 
                                                   <td>
-                                                      <input type="checkbox" name="permission[etender][edit]" value="1">
+                                                      <input type="checkbox" name="permission[subadmin][edit]" value="1">
                                                   </td>
                                                   <td>
-                                                      <input type="checkbox" name="permission[etender][delete]" value="1">
-                                                  </td>
-
-                                              </tr>
-
-                                              <tr>
-                                                  <td>Ibchk Department</td>
-
-                                                  <td>
-                                                      <input type="checkbox" name="permission[ibchkdept][view]" value="1">
-                                                  </td>
-                                                  <td>
-                                                      <input type="checkbox" name="permission[ibchkdept][add]" value="1">
-                                                  </td>
-
-                                                  <td>
-                                                      <input type="checkbox" name="permission[ibchkdept][edit]" value="1">
-                                                  </td>
-                                                  <td>
-                                                      <input type="checkbox" name="permission[ibchkdept][delete]" value="1">
+                                                      <input type="checkbox" name="permission[subadmin][delete]" value="1">
                                                   </td>
 
                                               </tr>

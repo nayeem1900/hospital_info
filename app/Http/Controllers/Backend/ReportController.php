@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\HospitalEntry;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,33 +47,24 @@ class ReportController extends Controller
         }
 
         return response()->json($hospital_entry);
-
-
-           /*
-        $html['thsource'] = '<th> Students Fee</th>';
-        $html['thsource'].= '<th>Other Cost</th>';
-        $html['thsource'].= '<th>Employee Salary</th>';
-        $html['thsource'].= '<th>Total Cost</th>';
-        $html['thsource'].= '<th>Profit</th>';
-        $html['thsource'].= '<th>Action</th>';
-        $color='success';
-
-        $html['tdsource'] = '<td>' .$item->admit_emergency. '</td>';
-        $html['tdsource'] .= '<td>' . $other_cost.'</td>';
-        $html['tdsource'] .= '<td>' . $emp_salary.'</td>';
-        $html['tdsource'] .= '<td>' . $total_cost.'</td>';
-        $html['tdsource'] .= '<td>' . $profit.'</td>';
-        $html['tdsource'] .= '<td>';
-
-        $html['tdsource'] .='<a class="btn btn-sm btn-'.$color.'"  titel="PDF" target="_blank" href="'.route("reports.profit.pdf").'?start_date='.$sdate.'&end_date='.$edate.'">
-<i class="fa fa-file"> </i> </a>';
-        $html['tdsource'] .= '</td>';
-*/
-
-//        return response()->json(@$html);
-
-
     }
+
+    public function hReportPdf(Request $request){
+
+//dd($request->all());
+        $data['sdate']=date('Y-m-d',strtotime($request->start_date));
+        $data['edate']=date('Y-m-d',strtotime($request->end_date));
+
+//        return  view('backend.report.pdf.hospital_pdf',$data);
+
+        $pdf =Pdf::loadView('backend.report.pdf.hospital_pdf',$data);
+
+      return $pdf->stream('document.pdf');
+      /*$path = public_path('backend.pdf');
+        $pdf->save($path);*/
+    }
+
+
 
 
 }

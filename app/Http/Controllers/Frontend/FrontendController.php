@@ -15,9 +15,9 @@ class FrontendController extends Controller
 {
     //
     public function index(){
-        $data['logo']=Logo::first();
-        $data['sliders']=Slider::orderBy('id','desc')->get();
-        return view ('frontend.layouts.home',$data);
+
+
+        return view ('frontend.layouts.home');
 
     }
 
