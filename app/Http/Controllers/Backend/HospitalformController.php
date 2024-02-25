@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class HospitalformController extends Controller
 {
+    public function repView(){
+        dd('ok');
+
+    }
+
     //
     public function add()
     {

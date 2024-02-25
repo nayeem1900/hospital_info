@@ -82,7 +82,7 @@
         </div>
         <div class="col-md-12">
             @php
-//dd($sdate, $edate);
+
                $sdate=date('Y-m-d',strtotime($sdate));
                $edate=date('Y-m-d',strtotime($edate));
 
@@ -96,7 +96,6 @@
                        ->get();
                }
 
-//dd($$hospital_entry);
             @endphp
 
 
@@ -105,25 +104,48 @@
                 <tbody>
 
                 <tr>
-                    <td colspan="2" style="text-align:center"><h4>Reporting Date:{{date('d M Y',strtotime($sdate))}} - {{date('d M Y',strtotime($edate))}}</h4>
+                    <th  style="text-align:center"><h4>Reporting Date:{{date('d M Y',strtotime($sdate))}} - {{date('d M Y',strtotime($edate))}}</h4>
 
-                    </td>
+                    </th>
                 </tr>
                 <tr>
+                    <th>Sl</th>
+                    <th>Particular</th>
+                    @foreach($hospital_entry as $branch)
+                    <th>{{$branch->user()->branch_name}}</th>
+                    @endforeach
+                    <th>IBH Motijheel</th>
+                    <th>IBH Mirpur</th>
+                    <th>IBH Cardiac</th>
+                    <th>IBH NayaPaltan</th>
+                    <th>IBH Mugdha</th>
+                    <th>IBH Barishal</th>
+                    <th>IBH Khulna</th>
+                    <th>IBH CTG. AG</th>
+                    <th>IBMH, Rajshahi</th>
+                    <th>IBH, Luxmipur, Rajshahi</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    @foreach($hospital_entry as $key=>$value)
+                    <td>1</td>
+                    <td>No Of Patient Admit from Emergency</td>
+                    <td>12</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>12</td>
 
-                    <td style="width:50%"><h4>Purpose</h4></td>
-                    <td><h4>Amount</h4></td>
+
                 </tr>
-                @foreach( $hospital_entry as $key=>$value)
-                <tr>
-                    <td> SL</td>
-                    <td>{{$key+1}}</td>
-                </tr>
-                <tr>
-                    <td> Cabin no</td>
-                    <td>{{$value->cabin_no}}</td>
-                </tr>
-                @endforeach
+
 
                 </tbody>
 
@@ -137,11 +159,11 @@
             <tbody>
             <tr>
 
-                <td style="width: 30%"></td>
-                <td style="width: 30%"></td>
-                <td style="width: 40%; text-align: center;">
+                <td style="width: 35%"></td>
+                <td style="width: 35%"></td>
+                <td style="width: 30%; text-align: center;">
                     <hr style="border:solid 1px;width: 60%;color: #000;margin-bottom: 0px;">
-                    <p style="text-align: center;">{{ Auth::user()->id}} p>
+                    <p style="text-align: center;">{{ Auth::user()->id}}
                 </td>
             </tr>
             </tbody>

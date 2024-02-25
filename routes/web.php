@@ -56,42 +56,9 @@ Route::group(['prefix'=>'admin','middleware'=>['admin','auth','permission']],fun
 });
 
 
-Route::group(['prefix'=>'logos','middleware'=>['admin','auth','permission']],function () {
-
-    Route::get('/view',[LogoController::class,'view'])->name('logos.view');
-    Route::get('/add',[LogoController::class,'add'])->name('logos.add');
-    Route::post('/store',[LogoController::class,'store'])->name('logos.store');
-    Route::get('/edit/{id},',[LogoController::class,'edit'])->name('logos.edit');
-    Route::post('/update/{id},',[LogoController::class,'update'])->name('logos.update');
-    Route::post('/delete/{id},',[LogoController::class,'delete'])->name('logos.delete');
 
 
 
-});
-Route::group(['prefix'=>'sliders','middleware'=>['admin','auth','permission']],function () {
-
-    Route::get('/view',[SliderController::class,'view'])->name('sliders.view');
-    Route::get('/add',[SliderController::class,'add'])->name('sliders.add');
-    Route::post('/store',[SliderController::class,'store'])->name('sliders.store');
-    Route::get('/edit/{id},',[SliderController::class,'edit'])->name('sliders.edit');
-    Route::post('/update/{id},',[SliderController::class,'update'])->name('sliders.update');
-    Route::post('/delete/{id},',[SliderController::class,'delete'])->name('sliders.delete');
-
-
-
-});
-//Etender
-Route::group(['prefix'=>'etenders','middleware'=>['admin','auth','permission']],function () {
-
-    Route::get('/view',[EtenderController::class,'view'])->name('etenders.view');
-    Route::get('/add',[EtenderController::class,'add'])->name('etenders.add');
-    Route::post('/store',[EtenderController::class,'store'])->name('etenders.store');
-    Route::get('/edit/{id},',[EtenderController::class,'edit'])->name('etenders.edit');
-    Route::post('/update/{id},',[EtenderController::class,'update'])->name('etenders.update');
-    Route::post('/delete/{id},',[EtenderController::class,'delete'])->name('etenders.delete');
-    Route::post('/download',[EtenderController::class,'download'])->name('etenders.download');
-
-});
 
 //Hospital Forom Entry
 Route::group(['prefix'=>'hospitalform','middleware'=>['admin','auth','permission']],function () {
@@ -128,6 +95,7 @@ Route::group(['prefix'=>'reports','middleware' => 'auth'], function(){
     Route::get('/hospital_report/get', [ReportController::class,'hReport'])->name('reports.h_report.datewise.get');
     Route::get('/hospital_report/pdf', [ReportController::class,'hReportPdf'])->name('reports.h-report.pdf');
    // Route::get('/profit/pdf', 'Backend\Report\ProfitController@pdf')->name('reports.profit.pdf');
+    Route::get('/show_hospital_report/view',[ReportController::class,'repView'])->name('reportView');
 
 
 

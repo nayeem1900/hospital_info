@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ReportController extends Controller
 {
+    public function repView(){
+        $allData = HospitalEntry::with('user.branch')->get();
+        return view('backend.hospital-report.hospital-report', compact('allData'));
+
+
+    }
+
     //
     public function BhrView(Request $request)
     {

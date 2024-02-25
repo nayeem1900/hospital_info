@@ -43,24 +43,14 @@
                                     <div class="form-group col-md-3">
                                         <label class="control-label">Start Date</label>
                                         <input type="text" name="start_date" id="start_date" class="singledatepicker form-control form-control-sm
-" autocomplete="off" placeholder="Start Date" readonly>
+                            " autocomplete="off" placeholder="Start Date" readonly>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label class="control-label">End Date</label>
                                         <input type="text" name="end_date" id="end_date" class="singledatepicker form-control form-control-sm
-" autocomplete="off" placeholder="End Date" readonly>
+                            " autocomplete="off" placeholder="End Date" readonly>
                                     </div>
-                                    {{--<div class="form-group col-md-3">
 
-                                        <label for="year_id">Branch</label>
-                                        <select name="branch_id" id="branch_id" class="form-control select2bs4">
-                                            <option value="">Select Branch</option>
-                                            @foreach($years as $year)
-                                                <option value="{{$year->id}}"> {{$year->name}}</option>
-                                            @endforeach
-                                        </select>
-
-                                    </div>--}}
 
                                     <div class="form-group col-md-2">
                                         <a class="btn btn-sm btn-block btn-success" id="search" style="margin-top: 29px; color:white">Search</a>

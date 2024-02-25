@@ -36,6 +36,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3>Select Criteria</h3> <button id="btnPdf">PDF</button>
+                                <a href="{{route('reportView')}}">report show</a>
 
                             </div><!-- /.card-header -->
                             <div class="card-body">
@@ -157,8 +158,8 @@
                                          '<th>Collection Lab</th>'+
                                         '<th>Collection Hospital</th>'+
                                         '<th>Estimated Income</th>'+
-                                         '<th>Estimated Income</th>'+
                                         '<th>Estimated Expense</th>'+
+                                        '<th>Estimated Net Income</th>'+
                                         '<th>Entry Date</th>'+
 
 
