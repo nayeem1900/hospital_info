@@ -9,6 +9,8 @@
     <style type="text/css">
         table{
             border-collapse:collapse;
+            max-width:100% !important;
+            font-size: 8px;
         }
         h2 h3{
             margin:0;
@@ -95,57 +97,99 @@
                        ->whereBetween('entry_date', [$sdate, $edate])
                        ->get();
                }
-
+//dd($hospital_entry );
             @endphp
 
 
 
+            <h4>Reporting Date:{{date('d M Y',strtotime($sdate))}} - {{date('d M Y',strtotime($edate))}}</h4>
+
             <table border="1" width="100%">
+
                 <tbody>
 
-                <tr>
-                    <th  style="text-align:center"><h4>Reporting Date:{{date('d M Y',strtotime($sdate))}} - {{date('d M Y',strtotime($edate))}}</h4>
 
-                    </th>
-                </tr>
                 <tr>
                     <th>Sl</th>
-                    <th>Particular</th>
-                    @foreach($hospital_entry as $branch)
-                    <th>{{$branch->user()->branch_name}}</th>
-                    @endforeach
-                    <th>IBH Motijheel</th>
-                    <th>IBH Mirpur</th>
-                    <th>IBH Cardiac</th>
-                    <th>IBH NayaPaltan</th>
-                    <th>IBH Mugdha</th>
-                    <th>IBH Barishal</th>
-                    <th>IBH Khulna</th>
-                    <th>IBH CTG. AG</th>
-                    <th>IBMH, Rajshahi</th>
-                    <th>IBH, Luxmipur, Rajshahi</th>
+                    <th>Branch Name</th>
+
+                    <th>No Of Patient Admit from Emergency</th>
+
+                    <th>No Of Ward (Last Date)</th>
+                    <th>No Of Ward Occuiped (Last Date)</th>
+                    <th>No Of Cabin (Last Date)</th>
+                    <th>No Of Cabin Occuiped (Last Date)</th>
+                    <th>Total Hospital Bed</th>
+                    <th>Total Hospital Bed Occuiped</th>
+                    <th>No Of Ward (Last Date)</th>
+                    <th>No Of Admitted Patient</th>
+                    <th>No Of Emergency Patient</th>
+                    <th>No Of Consultant</th>
+                    <th>No Of Outdoor Patient</th>
+                    <th>Physiotherapy Patients</th>
+                    <th>Dental Patients</th>
+                    <th>No Of CTSCAN</th>
+                    <th>No Of MRI</th>
+                    <th>No Of Imaging (without CT & MRI)</th>
+                    <th>No Of Lab Investigation</th>
+                    <th>No Of Operation</th>
+                    <th>Canteen Sales</th>
+                    <th>Drug Outdoor Sales</th>
+                    <th>Drug Indoor Sales</th>
+                    <th>Total Drug Sales</th>
+                    <th>Collection Imaging</th>
+                    <th>Collection Lab</th>
+                    <th>Collection Hospital</th>
+                    <th>Estimated Income</th>
+                    <th>Estimated Expense</th>
+                    <th>Estimated Net Income</th>
+                    <th>Entry Date</th>
                     <th>Total</th>
                 </tr>
+                @foreach($hospital_entry as $key => $value )
                 <tr>
-                    @foreach($hospital_entry as $key=>$value)
-                    <td>1</td>
-                    <td>No Of Patient Admit from Emergency</td>
-                    <td>12</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>12</td>
+                    <td>{{$key+1}}</td>
+                    <td>{{$value->user->branch->branch_name}}</td>
+                    <td>{{$value->admit_emergency}}</td>
+                    <td>{{$value->ward_no}}</td>
+                    <td>{{$value->ward_occuiped}}</td>
+                    <td>{{$value->cabin_no}}</td>
+                    <td>{{$value->cabin_occupied}}</td>
+                    <td>{{$value->total_bed}}</td>
+                    <td>{{$value->total_bed_occuiped}}</td>
+                    <td>{{$value->admited_patient_no}}</td>
+                    <td>{{$value->released_patient_no}}</td>
+                    <td>{{$value->emergency_patient}}</td>
+                    <td>{{$value->consultant_no}}</td>
+                    <td>{{$value->opd_no}}</td>
+                    <td>{{$value->physiotherapy_patient}}</td>
+                    <td>{{$value->dental_patient}}</td>
+                    <td>{{$value->ctscan_no}}</td>
+                    <td>{{$value->mri_no}}</td>
+                    <td>{{$value->imaging_no}}</td>
+                    <td>{{$value->lab_investigation_no}}</td>
+                    <td>{{$value->ot_no}}</td>
+                    <td>{{$value->canteen_sales}}</td>
+                    <td>{{$value->drug_outdoor_sales}}</td>
+                    <td>{{$value->drug_indoor_sales}}</td>
+                    <td>{{$value->total_drug_sales}}</td>
+                    <td>{{$value->collection_imaging}}</td>
+                    <td>{{$value->collection_lab}}</td>
+                    <td>{{$value->collection_hospital}}</td>
+                    <td>{{$value->estimated_income}}</td>
+                    <td>{{$value->estimated_income}}</td>
+                    <td>{{$value->estimated_expense}}</td>
+                    <td>{{$value->estimated_netincome}}</td>
+                    <td>{{$value->entry_date}}</td>
+                    <td>total</td>
+
+
+
+
 
 
                 </tr>
-
+                @endforeach
 
                 </tbody>
 
@@ -163,7 +207,7 @@
                 <td style="width: 35%"></td>
                 <td style="width: 30%; text-align: center;">
                     <hr style="border:solid 1px;width: 60%;color: #000;margin-bottom: 0px;">
-                    <p style="text-align: center;">{{ Auth::user()->id}}
+                    <p style="text-align: center;">{{ Auth::user()->name}}
                 </td>
             </tr>
             </tbody>

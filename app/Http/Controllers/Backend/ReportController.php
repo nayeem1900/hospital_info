@@ -65,8 +65,8 @@ class ReportController extends Controller
 //        return  view('backend.report.pdf.hospital_pdf',$data);
 
         $pdf =Pdf::loadView('backend.report.pdf.hospital_pdf',$data);
-
-      return $pdf->download('document.pdf');
+        $pdf->setPaper('a4', 'landscape');
+      return $pdf->stream('document.pdf');
       /*$path = public_path('backend.pdf');
         $pdf->save($path);*/
     }
